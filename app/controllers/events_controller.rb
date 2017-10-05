@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
 	before_action :find_event, only:[:edit, :update, :show, :destroy]
 
 	def index
@@ -31,6 +30,7 @@ class EventsController < ApplicationController
 	end
 
 	def show
+		EventDetail.new(event: @event).generate
 	end
 
 	def destroy
