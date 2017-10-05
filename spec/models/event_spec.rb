@@ -24,5 +24,11 @@ RSpec.describe Event, :type => :model do
 			event.valid?
 			expect(event.errors[:day]).to include(" number cannot be greater than 31.")
 		end
+
+		it 'validates the month frequency is greater than one' do
+			event = Event.new(month_frequency: 0)
+			event.valid?
+			expect(event.errors[:month_frequency]).to include(' must be greater than 0')
+		end
 	end
 end
