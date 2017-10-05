@@ -1,1 +1,4 @@
-<%= event.label %>
+<h2>
+	<%= link_to event.label, event_path(event) %>
+	Frequency of Event: Every <%= event.month_frequency %> Months
+</h2>
