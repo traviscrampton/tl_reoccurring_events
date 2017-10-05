@@ -14,9 +14,11 @@ ActiveRecord::Schema.define(version: 20171005173312) do
 
   create_table "events", force: :cascade do |t|
     t.string "label"
-    t.date "starting_date"
+    t.datetime "starting_date"
     t.integer "month_frequency"
     t.integer "day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
