@@ -4,6 +4,10 @@ class Event < ActiveRecord::Base
 		validate :day, :if => :is_month_day?
 
 
+		def next_delivery_date
+			EventDetail.new(event: self).generate.first
+		end
+
 		private
 
 		# this will validate that the month frequency is greater than 0
@@ -23,5 +27,4 @@ class Event < ActiveRecord::Base
 				end
 			end
 		end
-
 end

@@ -1,5 +1,6 @@
 <h2>
-	<%= link_to event.label, event_path(event) %> ||
+	<%= link_to event.label, event_path(event) %>
+	Next delivery date <%= event.next_delivery_date %>  ||
 	<%= link_to "Edit", edit_event_path(event) %>
 	<%= link_to "Delete", event_path(event), method: :delete, data:{confirm:'Are you sure you want to delete this event?'} %>
 </h2>

@@ -1,0 +1,10 @@
+<h1> <%= @event.label %></h1>
+
+<h2>Next four delivery dates are:</h2>
+<div>
+	<ul>
+		<% @next_four_dates.each do |date|  %>
+			<li> <%= date %> </li>
+		<% end %>
+	</ul>
+</div>

@@ -30,7 +30,7 @@ class EventsController < ApplicationController
 	end
 
 	def show
-		EventDetail.new(event: @event).generate
+		@next_four_dates = EventDetail.new(event: @event).generate
 	end
 
 	def destroy
